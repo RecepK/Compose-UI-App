@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kurban.app.api.Api
+import com.kurban.app.repository.remote.api.Api
 import com.kurban.app.repository.local.proto.ProtoUseCase
 import com.kurban.app.util.DELAY_TIME
 import com.kurban.app.util.UiState

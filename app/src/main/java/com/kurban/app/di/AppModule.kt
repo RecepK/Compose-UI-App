@@ -1,7 +1,7 @@
 package com.kurban.app.di
 
 import android.content.Context
-import com.kurban.app.api.Api
+import com.kurban.app.repository.remote.api.Api
 import com.kurban.app.repository.local.proto.ProtoUseCase
 import com.kurban.app.util.BASE_URL
 import dagger.Module

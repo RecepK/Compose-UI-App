@@ -1,4 +1,4 @@
-package com.kurban.app.api
+package com.kurban.app.repository.remote.api
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
