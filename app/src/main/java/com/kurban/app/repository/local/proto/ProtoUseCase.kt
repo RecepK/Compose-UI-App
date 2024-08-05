@@ -15,8 +15,18 @@ class ProtoUseCase @Inject constructor(context: Context) {
     private val _protoData = MutableLiveData<User>()
     val protoData: LiveData<User> = _protoData
 
-    suspend fun createUser() {
-        val user = User.newBuilder().build()
+    suspend fun createUser(
+        email: String,
+        password: String,
+        name: String,
+        surname: String,
+    ) {
+        val user = User.newBuilder()
+            .setEmail(email)
+            .setPassword(password)
+            .setName(name)
+            .setSurname(surname)
+            .build()
         updateUser(user)
     }
 
