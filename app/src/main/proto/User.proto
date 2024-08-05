@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "com.kurban.app";
+option java_multiple_files = true;
+
+message User {
+  int32  id = 1;
+  string  email = 2;
+  string  username = 3;
+  string  password = 4;
+  string  name = 5;
+  string  surname = 6;
+  bool root = 7;
+}

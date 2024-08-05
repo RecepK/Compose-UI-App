@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     kotlin("kapt")
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.protobuf)
 }
 
 android {
@@ -49,6 +50,24 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    protobuf {
+        protoc {
+            artifact = "com.google.protobuf:protoc:3.20.1"
+        }
+
+        generateProtoTasks {
+            all().forEach {
+                it.builtins {
+                    create("java") {
+                        option("lite")
+                    }
+                    create("kotlin") {
+                        option("lite")
+                    }
+                }
+            }
+        }
+    }
 }
 
 dependencies {
@@ -80,6 +99,11 @@ dependencies {
     //retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+
+    //protobuf
+    implementation(libs.androidx.datastore)
+    implementation(libs.protobuf.java.lite)
+    implementation(libs.protobuf.kotlin.lite)
 }
 
 kapt {
