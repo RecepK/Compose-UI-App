@@ -21,6 +21,10 @@ class MainViewModel @Inject constructor(
     val uiState: LiveData<UiState> = _uiState
 
     init {
+        fetchState()
+    }
+
+    private fun fetchState() {
         viewModelScope.launch {
             val response = api.isOpen()
             _uiState.postValue(UiState.LOAD)
